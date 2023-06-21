@@ -1,0 +1,125 @@
+{
+	"clientId": "1120692371617759343", // The id of the discord bot
+	"guildId": "964412892608860210", // The id of the discord server
+	"mainColor": "f6c42f", // The hex color of the embeds by default
+	"lang": "main", // If you want to set english please set "main"
+
+	"postgre": {
+		"enabled": true,
+		"host": "localhost", // The host of the PostgreSQL database
+		"user": "postgres", // The user of the PostgreSQL database
+		"password": "Zansen789", // The password of the PostgreSQL database
+		"database": "naohost", // The name of the PostgreSQL database
+		"table": "json" // The name of the table where the tickets will be saved
+	},
+
+	"closeTicketCategoryId": "1120707524774080624", // The id of the category where a closed ticket will be moved to. Leave blank to disable this feature
+
+	"openTicketChannelId": "1120707919550353438", // The id of the channel where the message to create a ticket will be sent
+
+	"ticketTypes": [
+		// You have a limit of 25 types (the limit of Discord)
+		{
+			"codeName": "order", // The name need to be in lowercase
+			"name": "Order", // The name that will be displayed in the ticket
+			"description": "Klik menu ini jika ingin memesan", // The description of the Ticket in Create Ticket Menu
+			"emoji": "📝", // The emoji of the type (can be blank)
+			"color": "3480eb", // Can be a hex color or blank to use the main color
+			"categoryId": "1120708710830981180", // The category id where the tickets will be created
+			"ticketNameOption": "📝-ticket-TICKETCOUNT", // Here is all parameter: USERNAME, USERID, TICKETCOUNT (set to blank to use the default name)
+			"customDescription": "Dengan ini kamu telah menyetujui semua peraturan yang ada! Silakan menunggu konfirmasi dari customer service kami\n\n_Orderan: *REASON1*_\n_Dengan paket: *REASON2*_\n_Dan pembayaran menggunakan: *REASON3*_",
+			"cantAccess": ["1111111111111111111"], // The roles who can't access to this ticket type
+			"askQuestions": true, // If the bot should ask the reason of the ticket
+			"questions": [
+				{
+					"label": "Order apa?",
+					"placeholder": "",
+					"style": "SHORT", // SHORT or PARAGRAPH
+					"maxLength": 727
+				},
+				{
+					"label": "Paket yang mana?",
+					"placeholder": "",
+					"style": "SHORT", // SHORT or PARAGRAPH
+					"maxLength": 727
+				},
+				{
+					"label": "Bayarnya pakai apa?",
+					"placeholder": "QRIS, E-Wallet (OVO, GOPAY), Transfer Bank",
+					"style": "SHORT", // SHORT or PARAGRAPH
+					"maxLength": 727
+				}
+			]
+		},
+    {
+			"codeName": "support", // The name need to be in lowercase
+			"name": "Support", // The name that will be displayed in the ticket
+			"description": "Klik menu ini jika ingin memanyakan sesuatu", // The description of the Ticket in Create Ticket Menu
+			"emoji": "❓", // The emoji of the type (can be blank)
+			"color": "3480eb", // Can be a hex color or blank to use the main color
+			"categoryId": "1120708710830981180", // The category id where the tickets will be created
+			"ticketNameOption": "❓-ticket-TICKETCOUNT", // Here is all parameter: USERNAME, USERID, TICKETCOUNT (set to blank to use the default name)
+			"customDescription": "Thank you for your ticket, a staff will reply you as soon as possible\n\n_Pertanyaan: REASON1_", // The custom description of the ticket type, here is all parameter: USERNAME, USERID, TICKETCOUNT, REASON1, 2, ect (set to blank to use the default description)
+			"cantAccess": ["1111111111111111111"], // The roles who can't access to this ticket type
+			"askQuestions": true, // If the bot should ask the reason of the ticket
+			"questions": [
+				{
+					"label": "Tanya apa?",
+					"placeholder": "",
+					"style": "SHORT", // SHORT or PARAGRAPH
+					"maxLength": 727
+				}
+			] // Leave blank if you don't want to ask questions
+		},
+    {
+			"codeName": "report", // The name need to be in lowercase
+			"name": "Report", // The name that will be displayed in the ticket
+			"description": "Klik menu ini jika ingin report sesuatu", // The description of the Ticket in Create Ticket Menu
+			"emoji": "❗", // The emoji of the type (can be blank)
+			"color": "3480eb", // Can be a hex color or blank to use the main color
+			"categoryId": "1120708710830981180", // The category id where the tickets will be created
+			"ticketNameOption": "❗-ticket-TICKETCOUNT", // Here is all parameter: USERNAME, USERID, TICKETCOUNT (set to blank to use the default name)
+			"customDescription": "Thank you for your ticket, a staff will reply you as soon as possible\n\n_Complain: REASON1_", // The custom description of the ticket type, here is all parameter: USERNAME, USERID, TICKETCOUNT, REASON1, 2, ect (set to blank to use the default description)
+			"cantAccess": ["1111111111111111111"], // The roles who can't access to this ticket type
+			"askQuestions": true, // If the bot should ask the reason of the ticket
+			"questions": [
+				{
+					"label": "Masalah apa?",
+					"placeholder": "",
+					"style": "SHORT", // SHORT or PARAGRAPH
+					"maxLength": 727
+				}
+			] // Leave blank if you don't want to ask questions
+		}
+	],
+	"ticketNameOption": "Ticket-TICKETCOUNT", // Here is all parameter: USERNAME, USERID, TICKETCOUNT
+	"ticketNamePrefixWhenClaimed": "✔", // With âœ”ï¸ as prefix the name of the ticket will be like this: âœ”ï¸ticket-1
+
+	"rolesWhoHaveAccessToTheTickets": ["964454933766234153", "2222222222222222222"], // Roles who can access to the tickets (Like the staff)
+
+	"rolesWhoCanNotCreateTickets": [], // Roles who can	not create a tickets (Like a blacklist)
+
+	"pingRoleWhenOpened": true,
+	"roleToPingWhenOpenedId": ["964454933766234153"], // The role to ping when a ticket is opened
+
+	"logs": true,
+	"logsChannelId": "1120708239399592077", // The id of the channel where the logs will be sent
+
+	"claimButton": true,
+
+	"whoCanCloseTicket": "STAFFONLY", // STAFFONLY (roles configured at "rolesWhoHaveAccessToTheTickets") or EVERYONE
+	"closeButton": true, // If false the ticket can be closed only by doing /closes
+	"askReasonWhenClosing": false, // If false the ticket will be closed without asking the reason
+
+	"createTranscript": true, // If set to true, when the ticket is closed a transcript will be generated and sent in the logs channel
+
+	"status": {
+		"enabled": true, // If you want to enable the status of the bot
+		"text": "with your mother", // The text of the status
+		"type": "PLAYING", // PLAYING, WATCHING, LISTENING, STREAMING, COMPETING
+		"url": "https://twitch.tv/grimkujow", // The url of the status if the type is STREAMING (can be blank)
+		"status": "idle" // online, idle, dnd, invisible set to online if the type is STREAMING
+	},
+
+	"maxTicketOpened": 1 // The number of tickets the user can open while another one is already open. Set to 0 to unlimited
+}
