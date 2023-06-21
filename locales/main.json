@@ -2,21 +2,21 @@
 	"embeds": {
 		"openTicket": {
 			"title": "Open a ticket",
-			"description": "Click on the button to start opening a ticket",
+			"description": "Click open a ticket button to order or need support!",
 			"footer": {
 				"text": "ticket.pm"
 			}
 		},
 		"ticketOpened": {
 			"title": "Ticket CATEGORYNAME",
-			"description": "A staff will reply you as soon as possible!",
+			"description": "With this you accept our rules! Please be patient for our customer service to reply your ticket!",
 			"footer": {
 				"text": "ticket.pm"
 			}
 		},
 		"ticketClosed": {
 			"title": "Ticket closed",
-			"description": "The ticket has been closed by CLOSERNAME with the following reason: `REASON`"
+			"description": "This ticket has been closed by CLOSERNAME With reason`REASON`"
 		},
 		"ticketClosedDM": {
 			"title": "Ticket closed",
@@ -51,7 +51,7 @@
 	"ticketOpenedMessage": "Ticket opened! TICKETCHANNEL",
 	"ticketOnlyClaimableByStaff": "The ticket can only be claimed by a staff!",
 	"ticketAlreadyClaimed": "The ticket is already claimed!",
-	"ticketClaimedMessage": "> Ticket claimed by USER",
+	"ticketClaimedMessage": "> Yey ticket has been claimed by USER! Waitting for reply",
 	"ticketOnlyClosableByStaff": "Only staff can close the ticket!",
 	"ticketAlreadyClosed": "The ticket is already closed!",
 	"ticketCreatingTranscript": "> Creating transcript...",
@@ -63,9 +63,9 @@
 	"other": {
 		"openTicketButtonMSG": "Open a ticket",
 		"deleteTicketButtonMSG": "Delete ticket",
-		"selectTicketTypePlaceholder": "Select a ticket type",
+		"selectTicketTypePlaceholder": "Select your category ticket",
 		"claimedBy": "**Claimed By**: USER",
-		"noReasonGiven": "No reason given",
+		"noReasonGiven": "null",
 		"unavailable": "Unavailable"
 	}
 }
